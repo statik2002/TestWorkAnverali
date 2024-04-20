@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+		<main>
+			<div id="carouselMain" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="{% static 'img/slider-01.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'img/slider-01.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'img/slider-01.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+				</div>
+			</div>
+
+			<div id="rubrics">
+
+			</div>
+
+			<div id="response">
+
+			</div>
+		</main>
+{% endblock content %}
