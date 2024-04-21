@@ -22,5 +22,6 @@ from kwork import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls'))
+    path('', include('main.urls')),
+    path('cabinet/', include('cabinet.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

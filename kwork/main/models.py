@@ -21,15 +21,35 @@ class CustomerManager(BaseUserManager):
 
 class Customer(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=100, unique=True, verbose_name='Логин')
-    first_name = models.CharField(max_length=256, null=True, blank=True, verbose_name='Имя')
-    last_name = models.CharField(max_length=256, null=True, blank=True, verbose_name='Фамилия')
+    username = models.CharField(
+        max_length=100,
+        unique=True,
+        verbose_name='Логин'
+    )
+    first_name = models.CharField(
+        max_length=256,
+        null=True,
+        blank=True,
+        verbose_name='Имя'
+    )
+    last_name = models.CharField(
+        max_length=256,
+        null=True,
+        blank=True,
+        verbose_name='Фамилия'
+    )
 
     is_active = models.BooleanField(default=False, verbose_name='Активен')
     is_admin = models.BooleanField(default=False, verbose_name='Это админ')
-    # Если True - то заказчик, иначе флилансер
-    is_customer = models.BooleanField(default=False, verbose_name='Заказчик')
-    experience = models.SmallIntegerField(default=0, verbose_name='Опыт в годах')
+    # Если True - то заказчик, иначе фрилансер
+    is_customer = models.BooleanField(
+        default=False,
+        verbose_name='Заказчик/Фрилансер'
+    )
+    experience = models.SmallIntegerField(
+        default=0,
+        verbose_name='Опыт в годах'
+    )
 
     date_joined = models.DateTimeField(
         'Дата регистрации',
@@ -41,7 +61,7 @@ class Customer(AbstractBaseUser):
     objects = CustomerManager()
 
     def __str__(self) -> str:
-        return f'{self.username} {self.is_active} : {self.is_customer}'
+        return f'{self.username}'
 
     class Meta:
         verbose_name = 'Пользователь'

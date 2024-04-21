@@ -1,0 +1,12 @@
+
+
+.widget {
+    border-radius: 10px;
+    box-shadow: 0 2px 16px 5px rgba(0, 0, 0, 0.08);
+}
+
+.round-badge {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
